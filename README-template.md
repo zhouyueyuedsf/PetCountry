@@ -1,4 +1,4 @@
-# Put title of your app here
+# Pet Country
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
@@ -6,7 +6,9 @@
 
 
 ## :scroll: Description
-<!--- Describe your app in one or two sentences -->
+it is a fake pet adoption app by use compose for the google challenge
+- list some pets
+- can show detail of each dog
 
 
 ## :bulb: Motivation and Context

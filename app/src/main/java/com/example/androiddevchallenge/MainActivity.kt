@@ -15,6 +15,7 @@
  */
 package com.example.androiddevchallenge
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +31,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp()
+                MyApp(onItemClick = {
+                    val intent = Intent(this, DetailActivity::class.java)
+                    intent.putExtra("itemId", it)
+                    startActivity(intent)
+                })
             }
         }
     }
@@ -38,9 +43,9 @@ class MainActivity : AppCompatActivity() {
 
 // Start building your app here!
 @Composable
-fun MyApp() {
+fun MyApp(onItemClick: (Long) -> Unit) {
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+        HomePage(onItemClick)
     }
 }
 
@@ -48,7 +53,7 @@ fun MyApp() {
 @Composable
 fun LightPreview() {
     MyTheme {
-        MyApp()
+        MyApp(onItemClick = {})
     }
 }
 
@@ -56,6 +61,6 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        MyApp()
+        MyApp(onItemClick = {})
     }
 }
