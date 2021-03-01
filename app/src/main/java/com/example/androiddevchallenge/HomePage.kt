@@ -46,7 +46,7 @@ fun HomePage(onItemClick: (Long) -> Unit) {
 }
 
 @Composable
-fun PetItem(petInfo: PetInfo, onItemClick: (Long) -> Unit) {
+fun PetItem(petInfo: PetInfo, onItemClick: (Long) -> Unit = {}) {
     Column {
         Row(
             modifier = Modifier
