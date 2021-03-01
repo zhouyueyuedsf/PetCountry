@@ -67,6 +67,5 @@ object PetDataSource {
             "女",
             "倪好", "123456，7456321 oh yes", "双鱼座", R.mipmap.img_1
         )
-
     )
 }
