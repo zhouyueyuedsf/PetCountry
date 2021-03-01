@@ -6,18 +6,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.material.Surface
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.SnackbarHostState
-import androidx.compose.material.Scaffold
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.SnackbarHost
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.SnackbarHost
+import androidx.compose.material.SnackbarHostState
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -61,14 +60,17 @@ fun DetailPage(petInfo: PetInfo) {
             SnackbarHost(snackbarHostState)
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = {
-                coroutineScope.launch {
-                    snackbarHostState.showSnackbar("你已经领养了 ${petInfo.name}")
+            FloatingActionButton(
+                onClick = {
+                    coroutineScope.launch {
+                        snackbarHostState.showSnackbar("你已经领养了 ${petInfo.name}")
+                    }
                 }
-            }) {
+            ) {
                 Text(text = "领养", color = Color.White, fontWeight = FontWeight.Bold)
             }
-        }) {
+        }
+    ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
                 modifier = Modifier

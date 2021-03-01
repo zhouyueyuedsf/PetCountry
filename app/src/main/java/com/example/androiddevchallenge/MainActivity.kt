@@ -21,7 +21,6 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androiddevchallenge.ui.theme.MyTheme
@@ -31,11 +30,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp(onItemClick = {
-                    val intent = Intent(this, DetailActivity::class.java)
-                    intent.putExtra("itemId", it)
-                    startActivity(intent)
-                })
+                MyApp(
+                    onItemClick = {
+                        val intent = Intent(this, DetailActivity::class.java)
+                        intent.putExtra("itemId", it)
+                        startActivity(intent)
+                    }
+                )
             }
         }
     }
